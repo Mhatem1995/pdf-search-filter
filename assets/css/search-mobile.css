@@ -11,125 +11,163 @@
     align-items: center;
     width: 100%;
     max-width: 100%;
-    padding: 20px 16px 40px;
+    padding: 32px 20px 40px;
     box-sizing: border-box;
 }
 
 /* ---- Header ---- */
 .pdf-search-mobile-wrapper .pdf-mobile-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 28px;
     width: 100%;
-    justify-content: center;
 }
 
-.pdf-search-mobile-wrapper .pdf-mobile-search-icon {
-    width: 28px;
-    height: 28px;
-    color: #0073aa;
-    flex-shrink: 0;
+.pdf-search-mobile-wrapper .pdf-mobile-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0073aa 0%, #00a0d2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 16px rgba(0, 115, 170, 0.3);
+}
+
+.pdf-search-mobile-wrapper .pdf-mobile-icon-circle svg {
+    width: 26px;
+    height: 26px;
+    color: #fff;
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #fff;
+    margin: 0 0 6px;
+    padding: 0;
+    letter-spacing: -0.3px;
+}
+
+.pdf-search-mobile-wrapper .pdf-mobile-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
     margin: 0;
     padding: 0;
+    font-weight: 400;
 }
 
 /* ---- Input ---- */
 .pdf-search-mobile-wrapper .pdf-mobile-input-wrap {
     position: relative;
     width: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+}
+
+.pdf-search-mobile-wrapper .pdf-mobile-input-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
 }
 
 .pdf-search-mobile-wrapper #pdf-mobile-search-input {
     width: 100%;
-    padding: 14px 44px 14px 16px;
+    padding: 16px 46px 16px 44px;
     font-size: 16px;
-    color: #1a1a1a;
-    border: 2px solid #d0d5dd;
-    border-radius: 12px;
-    background: #fff;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     outline: none;
     box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     -webkit-appearance: none;
 }
 
 .pdf-search-mobile-wrapper #pdf-mobile-search-input:focus {
-    border-color: #0073aa;
-    box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.15);
+    border-color: rgba(0, 160, 210, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 4px rgba(0, 115, 170, 0.15);
 }
 
 .pdf-search-mobile-wrapper #pdf-mobile-search-input::placeholder {
-    color: #98a2b3;
+    color: rgba(255, 255, 255, 0.35);
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-clear-btn {
     position: absolute;
-    left: 12px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: #98a2b3;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     border-radius: 50%;
     transition: background 0.15s, color 0.15s;
     line-height: 1;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.pdf-search-mobile-wrapper .pdf-mobile-clear-btn:hover,
 .pdf-search-mobile-wrapper .pdf-mobile-clear-btn:active {
-    background: #f2f4f7;
-    color: #475467;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* ---- Suggestions ---- */
 .pdf-search-mobile-wrapper .pdf-mobile-suggestions {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
     flex-wrap: wrap;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
+    justify-content: center;
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-suggestion {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 14px;
-    font-weight: 500;
-    color: #0073aa;
-    background: #eaf5ff;
-    border: 1px solid #b8dbf0;
-    border-radius: 20px;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition: background 0.2s, transform 0.15s, border-color 0.2s;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-suggestion:active {
-    transform: scale(0.95);
-    background: #cce5f6;
+    transform: scale(0.93);
+    background: rgba(0, 160, 210, 0.25);
+    border-color: rgba(0, 160, 210, 0.4);
 }
 
 /* ---- Result count ---- */
 .pdf-search-mobile-wrapper #pdf-mobile-search-count {
     width: 100%;
     font-size: 13px;
-    color: #667085;
-    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
     min-height: 20px;
     text-align: right;
 }
@@ -138,14 +176,14 @@
 .pdf-search-mobile-wrapper #pdf-mobile-search-loading {
     display: flex;
     justify-content: center;
-    padding: 24px 0;
+    padding: 28px 0;
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-spinner {
-    width: 32px;
-    height: 32px;
-    border: 3px solid #e4e7ec;
-    border-top-color: #0073aa;
+    width: 34px;
+    height: 34px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #00a0d2;
     border-radius: 50%;
     animation: pdfMobileSpin 0.7s linear infinite;
 }
@@ -163,31 +201,32 @@
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-result-card {
-    background: #fff;
-    padding: 14px 16px;
-    border-radius: 10px;
-    border-right: 4px solid #0073aa;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    transition: background 0.2s, box-shadow 0.2s;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 16px 18px;
+    border-radius: 12px;
+    border-right: 3px solid #00a0d2;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.2s, transform 0.15s;
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-result-card:active {
-    background: #f0f7fc;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(0.98);
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-result-card a {
-    color: #1a1a1a;
+    color: #fff;
     font-size: 15px;
     font-weight: 500;
     text-decoration: none;
     display: block;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .pdf-search-mobile-wrapper .pdf-mobile-no-result {
     text-align: center;
-    color: #98a2b3;
+    color: rgba(255, 255, 255, 0.4);
     font-size: 14px;
-    padding: 20px 0;
+    padding: 24px 0;
 }
