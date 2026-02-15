@@ -43,5 +43,33 @@ function pdf_search_filter_shortcode() {
 }
 add_shortcode('pdf_search_form', 'pdf_search_filter_shortcode');
 
+// Mobile shortcode – enqueues its own scoped assets only when used
+function pdf_search_filter_mobile_shortcode() {
+    wp_enqueue_script(
+        'pdf-search-mobile-script',
+        plugin_dir_url( __FILE__ ) . 'assets/js/search-mobile.js',
+        ['jquery'],
+        '1.0.0',
+        true
+    );
+
+    wp_localize_script('pdf-search-mobile-script', 'pdfSearch', [
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('pdf_search_nonce')
+    ]);
+
+    wp_enqueue_style(
+        'pdf-search-mobile-style',
+        plugin_dir_url( __FILE__ ) . 'assets/css/search-mobile.css',
+        [],
+        '1.0.0'
+    );
+
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'includes/render-search-form-mobile.php';
+    return ob_get_clean();
+}
+add_shortcode('pdf_search_form_mobile', 'pdf_search_filter_mobile_shortcode');
+
 // Include AJAX handler
 require_once plugin_dir_path(__FILE__) . 'includes/ajax-handler.php';
